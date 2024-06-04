@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function addBreak(link, save = true) {
         const videoId = link.split('v=')[1] || link.split('/').pop();
-        const apiUrl = `/.netlify/functions/youtube?videoId=${videoId}`;
+        const apiUrl = `./netlify/functions/youtube?videoId=${videoId}`;
         let videoTitle = link;
     
         try {
