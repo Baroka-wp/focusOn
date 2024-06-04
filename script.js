@@ -147,9 +147,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function addBreak(link, save = true) {
         const videoId = link.split('v=')[1] || link.split('/').pop();
-        const apiUrl = `./netlify/functions/youtube?videoId=${videoId}`;
+        const apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${process.env.YOUTUBE_API_KEY}`;
         let videoTitle = link;
-    
+
         try {
             const response = await fetch(apiUrl);
             const data = await response.json();
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } catch (error) {
             console.error('Error fetching video title:', error);
         }
-    
+
         const breakItem = document.createElement('li');
         breakItem.className = 'break-item';
         breakItem.innerHTML = `
@@ -174,19 +174,19 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `;
         breakList.appendChild(breakItem);
-    
+
         breakItem.addEventListener('click', function () {
             document.querySelectorAll('.break-item').forEach(item => item.classList.remove('active'));
             breakItem.classList.add('active');
             displayVideo(link);
         });
-    
+
         breakItem.querySelector('.delete-break').addEventListener('click', function (e) {
             e.stopPropagation();
             breakList.removeChild(breakItem);
             saveTasks();
         });
-    
+
         if (save) saveTasks();
     }
 
