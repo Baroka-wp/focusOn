@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var apiKey = 'AIzaSyD0zRe3lJzdzgjt_g0rcm-ha5IbNPMgHS8';
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Focus</h1>
+            <nav>
+                <button id="nav-pomodoro" class="active">Pomodoro</button>
+                <button id="nav-break">Break</button>
+            </nav>
+        </header>
+        <div id="content">
+            <main id="pomodoro-content">
+                <div class="timer-container">
+                    <div class="timer-display">
+                        <span id="time">25:00</span>
+                        <button id="start">START</button>
+                    </div>
+                </div>
+                <section class="task-container">
+                    <ul class="task-list" id="task-list">
+                        <!-- Les tâches seront ajoutées ici dynamiquement -->
+                    </ul>
+                    <input type="text" id="new-task-input" placeholder="Add a new task">
+                </section>
+            </main>
+            <main id="break-content" style="display: none;">
+                <div id="video-display"></div>
+                <section class="break-container">
+                    <ul class="break-list" id="break-list">
+                        <!-- Les liens seront ajoutés ici dynamiquement -->
+                    </ul>
+                    <input type="text" id="break-input" placeholder="Add a website or YouTube link">
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

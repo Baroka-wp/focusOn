@@ -1,0 +1,227 @@
+body {
+    font-family: "Palanquin", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    background-color: #d06767;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #b85454;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+nav button.active {
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+}
+
+main {
+    background-color: #c15e5e;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden; /* Empêcher le défilement de la main container */
+}
+
+.timer-container {
+    margin-bottom: 20px;
+}
+
+.timer-buttons button {
+    background-color: #a04b4b;
+    border: none;
+    color: #fff;
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.timer-display {
+    margin: 20px 0;
+}
+
+.timer-display span {
+    font-size: 100px;
+    display: block;
+}
+
+.timer-display button {
+    background-color: #fff;
+    color: #c15e5e;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.task-container {
+    background-color: #b85454;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto; /* Permettre le défilement uniquement dans la liste des tâches */
+    max-height: 400px; /* Limite de hauteur pour la liste des tâches */
+}
+
+.task-container h2 {
+    margin-top: 0;
+}
+
+.task-list, .break-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task, .break-item {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.task.active {
+    color: #000;
+    background-color: #ffe0b2; /* Couleur de fond pour la tâche sélectionnée */
+}
+
+.task .actions, .break-item .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.break-item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 250px;
+    display: inline-block;
+}
+
+#new-task-input, #break-input {
+    width: calc(100% - 20px);
+    height: 40px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px dashed #fff;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+}
+
+#new-task-input::placeholder, #break-input::placeholder {
+    color: #fff;
+}
+
+#new-task-input:focus, #break-input:focus {
+    outline: none;
+}
+
+#video-display {
+    margin-top: 20px;
+    height: 315px;
+}
+
+.complete-task, .delete-task {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.complete-task {
+    color: #4caf50;
+}
+
+.complete-task:hover {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.delete-task {
+    color: #f44336;
+}
+
+.delete-task:hover {
+    background-color: #f44336;
+    color: #fff;
+}
+
+textarea {
+    width: 95%;
+    height: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-family: "Palanquin", sans-serif;
+    font-weight: 100;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #999;
+}
+
+.task.active .note-input {
+    display: block;
+}
+
+.note-input {
+    display: none;
+}
